@@ -5,14 +5,11 @@ import {Component, EventEmitter, Output} from '@angular/core';
   templateUrl: './header.component.html'
 })
 export class HeaderComponent {
-  @Output() recipeShow = new EventEmitter<{ recipeShow: boolean }>();
-  @Output() listShow = new EventEmitter<{ listShow: boolean }>();
+  @Output() featureSelected = new EventEmitter<string>();
+  activeFeature = 'recipe';
 
-  onRecipeClick(): void {
-    this.recipeShow.emit({recipeShow: true});
-  }
-
-  onListClick(): void {
-    this.listShow.emit({listShow: true});
+  onSelect(feature: string): void {
+    this.featureSelected.emit(feature);
+    this.activeFeature = feature;
   }
 }

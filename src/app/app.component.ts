@@ -7,13 +7,9 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-recipe-book';
-  recipeShow = true;
+  loadedFeature = 'recipe';
 
-  onRecipeShow(): void {
-    this.recipeShow = true;
-  }
-
-  onListShow(): void {
-    this.recipeShow = false;
+  onNavigate(feature: string): void{
+    this.loadedFeature = feature;
   }
 }
