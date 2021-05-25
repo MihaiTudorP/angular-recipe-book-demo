@@ -7,16 +7,8 @@
 </div>
 <hr/>
 <div class="list-group clearfix" style="margin-left: 20px">
-  <a class="row list-group-item list-group-item-action" href="#" *ngFor="let recipe of recipes">
-    <div class="col-12">
-      <div class="row no-gutters">
-        <div class="col-md-8">
-          <h5>{{recipe.name}}</h5>
-          <p>{{recipe.description}}</p>
-        </div>
-        <img [src]="recipe.imagePath" [alt]="recipe.name"
-             class="col-md-4 img-thumbnail img-fluid no-gutters" style="max-height: 100px">
-      </div>
-    </div>
-  </a>
+  <app-recipe-item
+    *ngFor="let recipeElement of recipes"
+    [recipe]="recipeElement"
+    (recipeSelected)="onRecipeSelected($event)"></app-recipe-item>
 </div>
